@@ -9,8 +9,12 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 sudo az aks install-cli
 ```
 
-- kubectl and kubelogin will be downloaded to /usr/local/bin
-
+- kubectl and kubelogin will be downloaded to /usr/local/bin ($PATH)
+- Use below command to modify .kube/config file by adding the login method (Below command uses Azure CLI)
+```shell
+export KUBECONFIG=~/.kube/config
+kubelogin convert-kubeconfig -l azurecli
+```
 
 # (2) Add auto completion and Set alias for kubectl as k
 - open .bashrc file
