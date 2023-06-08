@@ -6,3 +6,6 @@ slave mount
 
 Follow below issue resoltion to resolve:
 https://github.com/prometheus-community/helm-charts/issues/467#issuecomment-793682080
+
+
+https://github.com/Azure/kubernetes-hackfest/tree/master/labs/monitoring-logging/prometheus-grafana
