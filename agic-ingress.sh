@@ -1,5 +1,5 @@
 export MY_RESOURCE_GROUP=aks-rg
-export MY_CLUSTER=aks
+export MY_CLUSTER=demo-aks
 export LOCATION=eastus
 az group create -l $LOCATION -n $MY_RESOURCE_GROUP
 az aks create -g $MY_RESOURCE_GROUP -n $MY_CLUSTER -s "Standard_B4ms" --node-count 1 --network-plugin azure \
