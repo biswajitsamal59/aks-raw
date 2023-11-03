@@ -1,12 +1,12 @@
-export MY_RESOURCE_GROUP=aks-rg
-export MY_CLUSTER=demo-aks
+export RESOURCE_GROUP=aks-rg
+export CLUSTER=demo-aks
 export LOCATION=eastus
-az group create -l $LOCATION -n $MY_RESOURCE_GROUP
-az aks create -g $MY_RESOURCE_GROUP -n $MY_CLUSTER -s "Standard_B4ms" --node-count 1 --network-plugin azure \
+az group create -l $LOCATION -n $RESOURCE_GROUP
+az aks create -g $RESOURCE_GROUP -n $CLUSTER -s "Standard_B4ms" --node-count 1 --network-plugin azure \
     --enable-managed-identity \
     -a ingress-appgw --appgw-name myApplicationGateway --appgw-subnet-cidr "10.244.2.0/24"
 
-az aks create -n $MY_CLUSTER -g $MY_RESOURCE_GROUP -s "Standard_B4ms" --node-count 1 --network-plugin azure \
+az aks create -n $CLUSTER -g $RESOURCE_GROUP -s "Standard_B4ms" --node-count 1 --network-plugin azure \
     --enable-managed-identity -a ingress-appgw \
     --appgw-name myApplicationGateway --appgw-subnet-cidr "10.225.0.0/16" --generate-ssh-keysls
 
